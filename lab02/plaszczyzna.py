@@ -1,11 +1,7 @@
+from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-
-
-# def get_angle(x_axis, line, offset=1, color=None, origin=[0,0], len_x_axis=1, len_y_axis=1):
-
-
 
 number = complex(5,3)
 
@@ -52,8 +48,20 @@ ax.set_yticks(np.arange(ymin, ymax+1), minor=True)
 # adding a grid
 ax.grid(which='both', color='grey', linewidth=1, linestyle='-', alpha=0.2)
 
+# line_1 = Line2D([0, 0], [re[0], im[0]], linewidth=1, linestyle="-", color="green")
+# line_2 = Line2D([re[0], 0], [0, 0], linewidth=5, linestyle="-", color="black")
+
+# ax.add_line(line_1)
+# ax.add_line(line_2)
+
+angle = np.angle(number)
+print(angle * 100)
+
+a1, b1 = (3/5), 0
+a2, b2 = (0), 0
+
 plt.grid()
-plt.plot([0, re[0]], [0, im[0]], markersize=12, markerfacecolor="blue")
-plt.plot(re, im, marker="o", markersize=8, markerfacecolor="blue")
+plt.plot(ax, ax*a1 + 0)
+plt.plot(ax, ax*a2 + 0)
 
 plt.show()
